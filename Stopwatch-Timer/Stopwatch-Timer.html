@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+        <title>Stopwatch Timer</title>
+        <style>
+            body {
+                background: green;
+                height: 100%;
+            }
+            .timer {
+                width: 800px;
+                margin: 30px auto;
+                color: white;
+                text-align: center;
+            }
+            h1, h2 {
+                font-weight: 100;
+                font-size: 2.6em;
+                text-transform: uppercase;
+            }
+            #hr, #min, #sec, #msec {
+                font-size: 2em;
+            }
+            button {
+                background: green;
+                color: white;
+                border: solid 1px white;
+                text-decoration: none;
+                cursor: pointer;
+                font-size: 1.2em;
+                padding: 18px 10px;
+                width: 180px;
+                margin: 10px;
+                outline: none;
+            }
+        </style>       
+    </head>
+    <body>
+        <div class = "timer">
+            <h1>Stopwatch Timer</h1>
+            <h2><i class = "fas fa-stopwatch"></i></h2>
+            <p>
+                <span id = "hr">00</span>
+                :
+                <span id = "min">00</span>
+                :
+                <span id = "sec">00</span>
+                :
+                <span id = "msec">00</span>
+            </p>
+            <button id = "btn-start">Start</button>
+            <button id = "btn-stop">Stop</button>
+            <button id = "btn-reset">Reset</button>
+        </div>
+
+        <hr>
+
+        <footer style = "margin: 4px; text-align: center; font-weight: lighter;">
+            <span>&copy; Copyright 2024</span>
+        </footer>
+
+        <script>                       
+                let hr = min = sec =  msec = 0;        
+                let interval;       
+                
+                document.querySelector("#btn-start").onclick = ( () => {
+                    interval = setInterval (timer, 10);                    
+                });
+
+                document.querySelector("#btn-stop").onclick = ( () => {
+                    clearInterval(interval);                    
+                });
+
+                document.querySelector("#btn-reset").onclick = ( () => {
+                    clearInterval(interval);
+                    hr = min = sec = msec = 0;
+                    document.querySelector("#hr").textContent = "00";
+                    document.querySelector("#min").textContent = "00";
+                    document.querySelector("#sec").textContent = "00";
+                    document.querySelector("#msec").textContent = "00";                    
+                });
+
+                function timer () {                    
+                    msec++;
+                    
+                    if (msec <= 9) {
+                        document.querySelector("#msec").textContent = "0" + msec;
+                    }
+                    if (msec > 9) {                        
+                        document.querySelector("#msec").textContent = msec;                        
+                    }
+                    if (msec == 60) {                        
+                        sec++;
+                        document.querySelector("#sec").textContent = "0" + sec;
+                        msec = 0;
+                        document.querySelector("#msec").textContent = "0" + msec;
+                    }
+
+                    if (sec <= 9) {
+                        document.querySelector("#sec").textContent = "0" + sec;
+                    }
+                    if (sec > 9) {
+                        document.querySelector("#sec").textContent = sec;
+                    }
+                    if (sec == 60) {
+                        min++;
+                        document.querySelector("#min").textContent = "0" + min;
+                        sec = 0;
+                        document.querySelector("#sec").textContent = "0" + sec;
+                        msec = 0;
+                        document.querySelector("#msec").textContent = "0" + msec;
+                    }
+
+                    if (min <= 9) {
+                        document.querySelector("#min").textContent = "0" + min;
+                    }
+                    if (min > 9) {
+                        document.querySelector("#min").textContent = min;
+                    }
+                    if (min == 60) {                        
+                        hr++;
+                        document.querySelector("#hr").textContent = "0" + hr;
+                        min = 0;
+                        document.querySelector("#min").textContent = "0" + min;
+                        sec = 0;
+                        document.querySelector("#sec").textContent = "0" + sec;
+                        msec = 0;
+                        document.querySelector("#msec").textContent = "0" + msec;
+                    }    
+                    
+                    if (hr <= 9) {
+                        document.querySelector("#hr").textContent = "0" + hr;
+                    }
+                    if (hr > 9) {
+                        document.querySelector("#hr").textContent = hr;
+                    }
+                }            
+        </script>
+    </body>
+</html>
