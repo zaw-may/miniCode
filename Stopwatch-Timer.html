@@ -77,65 +77,65 @@
                 document.querySelector("#btn-reset").onclick = ( () => {
                     clearInterval(interval);
                     hr = min = sec = msec = 0;
-                    document.querySelector("#hr").innerHTML = "00";
-                    document.querySelector("#min").innerHTML = "00";
-                    document.querySelector("#sec").innerHTML = "00";
-                    document.querySelector("#msec").innerHTML = "00";                    
+                    document.querySelector("#hr").textContent = "00";
+                    document.querySelector("#min").textContent = "00";
+                    document.querySelector("#sec").textContent = "00";
+                    document.querySelector("#msec").textContent = "00";                    
                 });
 
                 function timer () {                    
                     msec++;
                     
                     if (msec <= 9) {
-                        document.querySelector("#msec").innerHTML = "0" + msec;
+                        document.querySelector("#msec").textContent = "0" + msec;
                     }
                     if (msec > 9) {                        
-                        document.querySelector("#msec").innerHTML = msec;                        
+                        document.querySelector("#msec").textContent = msec;                        
                     }
                     if (msec == 60) {                        
                         sec++;
-                        document.querySelector("#sec").innerHTML = "0" + sec;
+                        document.querySelector("#sec").textContent = "0" + sec;
                         msec = 0;
-                        document.querySelector("#msec").innerHTML = "0" + msec;
+                        document.querySelector("#msec").textContent = "0" + msec;
                     }
 
                     if (sec <= 9) {
-                        document.querySelector("#sec").innerHTML = "0" + sec;
+                        document.querySelector("#sec").textContent = "0" + sec;
                     }
                     if (sec > 9) {
-                        document.querySelector("#sec").innerHTML = sec;
+                        document.querySelector("#sec").textContent = sec;
                     }
                     if (sec == 60) {
                         min++;
-                        document.querySelector("#min").innerHTML = "0" + min;
+                        document.querySelector("#min").textContent = "0" + min;
                         sec = 0;
-                        document.querySelector("#sec").innerHTML = "0" + sec;
+                        document.querySelector("#sec").textContent = "0" + sec;
                         msec = 0;
-                        document.querySelector("#msec").innerHTML = "0" + msec;
+                        document.querySelector("#msec").textContent = "0" + msec;
                     }
 
                     if (min <= 9) {
-                        document.querySelector("#min").innerHTML = "0" + min;
+                        document.querySelector("#min").textContent = "0" + min;
                     }
                     if (min > 9) {
-                        document.querySelector("#min").innerHTML = min;
+                        document.querySelector("#min").textContent = min;
                     }
                     if (min == 60) {                        
                         hr++;
-                        document.querySelector("#hr").innerHTML = "0" + hr;
+                        document.querySelector("#hr").textContent = "0" + hr;
                         min = 0;
-                        document.querySelector("#min").innerHTML = "0" + min;
+                        document.querySelector("#min").textContent = "0" + min;
                         sec = 0;
-                        document.querySelector("#sec").innerHTML = "0" + sec;
+                        document.querySelector("#sec").textContent = "0" + sec;
                         msec = 0;
-                        document.querySelector("#msec").innerHTML = "0" + msec;
+                        document.querySelector("#msec").textContent = "0" + msec;
                     }    
                     
                     if (hr <= 9) {
-                        document.querySelector("#hr").innerHTML = "0" + hr;
+                        document.querySelector("#hr").textContent = "0" + hr;
                     }
                     if (hr > 9) {
-                        document.querySelector("#hr").innerHTML = hr;
+                        document.querySelector("#hr").textContent = hr;
                     }
                 }            
         </script>
