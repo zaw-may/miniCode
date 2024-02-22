@@ -13,11 +13,9 @@ label {
     color: black;
     font-weight: bold;
 }
-#currency {
-    font-size: 2.5rem;
-}
 #unit {
     font-size: 1.5rem;
+    color: blueviolet;
 }
 .tab-label {
     color: blueviolet;
@@ -25,4 +23,14 @@ label {
 }
 i {
     color: blueviolet;
+}
+#result {
+    display: none;
+}
+#total {
+    font-size: 2.5rem;
+    color: blueviolet;
+}
+#currency {
+    font-size: 2.5rem;
 }
