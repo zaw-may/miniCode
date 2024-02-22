@@ -19,7 +19,7 @@
                 <div class = "col">
                     <div class = "alert alert-info">
                         <i class = "fas fa-info-circle"></i>
-                        I use the google exchange rate for this converter. This is for informational purposes only. If you want to know more, please check 
+                        I use api-exchange-rate for this converter. This is for informational purposes only. If you want to know more, please check 
                         <a href = "https://www.google.com/finance/markets/currencies?hl=en" title = "Google Finance">this link.</a>
                     </div>
                 </div>
@@ -78,34 +78,48 @@
                     <form class = "container m-3 p-3 border border-2 border-dark rounded">
                         <div class = "mb-2">
                             <label for = "amt">AMOUNT</label>
-                            <input type = "text" class = "form-control" id  = "amt" name = "amt" placeholder = "Amount" required>
+                            <input type = "number" class = "form-control" id  = "amt" name = "amt" placeholder = "Enter Amount" required>
                         </div>
                         <div class = "mb-2">
                             <label for = "ex-rate1">FROM</label>
                             <select id = "ex-rate1" class = "form-select">
-                                <option value = "USD">US Dollar (USD)</option>
-                                <option value = "MMK">Myanmar Kyat (MMK)</option>
-                                <option value = "BAHT">Thai Baht (BAHT)</option>
-                                <option value = "PESO">Philippines Peso (PESO)</option>
-                                <option value = "AED">UAE Dirham (AED)</option>
-                                <option value = "GBP">British Pound (GBP)</option>
+                                <option value = "USD">US Dollar</option>
+                                <option value = "MMK">Myanmar Kyat</option>
+                                <option value = "THB">Thailand Baht</option>
+                                <option value = "PHP">Philippines Peso</option>
+                                <option value = "AED">UAE Dirham</option>
+                                <option value = "GBP">British Pound</option>
+                                <option value = "MYR">Malaysia Ringgit</option>
+                                <option value = "SGD">Singapore Dollar</option>
+                                <option value = "JPY">Japan Yen</option>
+                                <option value = "CNY">Chinese Yuan</option>
+                                <option value = "KRW">South Korea Won</option>
+                                <option value = "LAK">LAO-PDR Kip</option>
+                                <option value = "CAD">Canada Canadian Dollar</option>
                             </select>
                         </div>
                         <div class = "mb-2">
                             <label for = "ex-rate2">TO</label>
-                            <select id = "ex-rate2" class = "form-select">                                
-                                <option value = "MMK">Myanmar Kyat (MMK)</option>
-                                <option value = "BAHT">Thai Baht (BAHT)</option>
-                                <option value = "PESO">Philippines Peso (PESO)</option>
-                                <option value = "AED">UAE Dirham (AED)</option>
-                                <option value = "GBP">British Pound (GBP)</option>
-                                <option value = "USD">US Dollar (USD)</option>
+                            <select id = "ex-rate2" class = "form-select">                              
+                                <option value = "MMK">Myanmar Kyat</option>
+                                <option value = "THB">Thailand Baht</option>
+                                <option value = "PHP">Philippines Peso</option>
+                                <option value = "AED">UAE Dirham</option>
+                                <option value = "GBP">British Pound</option>
+                                <option value = "MYR">Malaysia Ringgit</option>
+                                <option value = "SGD">Singapore Dollar</option>
+                                <option value = "JPY">Japan Yen</option>
+                                <option value = "CNY">Chinese Yuan</option>
+                                <option value = "KRW">South Korea Won</option>
+                                <option value = "LAK">LAO-PDR Kip</option>
+                                <option value = "CAD">Canada Canadian Dollar</option>
+                                <option value = "USD">US Dollar</option>
                             </select>
                         </div>
                         <div class = "mb-2 clearfix">
                             <div class = "float-lg-start">
                                 <center>
-                                    <button class = "btn btn-info mt-3">
+                                    <button class = "btn btn-info mt-3" id = "btn-convert">
                                         <i class = "fas fa-calculator"></i>
                                         <span class = "tab-label">CALCULATE</span>
                                     </button>
@@ -117,12 +131,14 @@
             </div>
 
             <!-- Result -->
-            <div class = "row g-5 container">
+            <div class = "row g-5">
                 <div class = "col">
-                    <div id = "result" class = "h2">
-                        <span id = "currency"></span>
-                        <span id = "total"></span>
-                        <span id = "unit"></span>
+                    <div id = "result" class = "h2"> 
+                        <center>   
+                            <i class = "fas fa-wallet" id = "currency"></i>                    
+                            <span id = "total"></span>
+                            <span id = "unit"></span>
+                        </center>
                     </div>
                 </div>                
             </div>
