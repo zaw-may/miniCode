@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>mini-coding</title>
+        <link rel = "stylesheet" href = "custom.css">
+    </head>
+    <body>
+        <div class = "container">
+            <h3 class = "text-center m-3" style = "height:50px; color:brown;">Welcome to the mini-coding development!</h3>
+            <div class = "row mb-3">
+                <div class = "col note">
+                    Please explore the comprehensive codes by selecting the buttons provided below. Whether you have suggestions for improvement, comments on your experience, or ideas for new features, your input is incredibly valuable to me.
+                </div>
+            </div>
+            <div class = "row mb-4">
+                <div class = "col text-center">
+                    <a class = "btn btn-primary mybtn m-1" href = "https://github.com/zaw-may/miniCode/tree/main/Tarot-Reading">Tarrot Reading</a>
+                    <a class = "btn btn-secondary mybtn m-1" href = "https://github.com/zaw-may/miniCode/tree/main/To-Do-List">To Do List</a>
+                    <a class = "btn btn-success mybtn m-1" href = "https://github.com/zaw-may/miniCode/tree/main/Stopwatch-Timer">Stopwatch Timer</a>
+                    <a class = "btn btn-warning mybtn m-1" href = "https://github.com/zaw-may/miniCode/tree/main/Currency-Converter">Currency Converter</a>
+                </div>                
+            </div>
+            <div class = "row mb-3">
+                <div class = "col">
+                    <div id = "feedback-box">
+                        <h6>Leave Your Feedback</h6>
+                        <textarea id = "feedback" placeholder = "Enter your suggestion, feedback here..."></textarea> 
+                        <button onclick = "submitFeedback()" class = "btn btn-dark mybtn">Submit</button>                       
+                    </div>
+                </div>                     
+            </div>            
+        </div>
+
+        <footer class = "text-center py-4 text-muted">
+            &copy; Copyright 2024
+        </footer>
+        <script src = "submitFeedback.js"></script>
+    </body>
+</html>
